@@ -1,0 +1,33 @@
+[System]
+Name='Lab01'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='mom'
+
+[Input1]
+Name='input1'
+Range=[2304 2536]
+NumMFs=3
+MF1='slow':'trimf',[2304 2362 2420]
+MF2='right':'trimf',[2391 2420 2449]
+MF3='fast':'trimf',[2420 2478 2536]
+
+[Output1]
+Name='output1'
+Range=[2.32 2.48]
+NumMFs=3
+MF1='slowDown':'trimf',[2.32 2.36 2.4]
+MF2='notMuchChange':'trimf',[2.38 2.4 2.42]
+MF3='speedUp':'trimf',[2.4 2.44 2.48]
+
+[Rules]
+1, 3 (1) : 1
+2, 2 (1) : 1
+3, 1 (1) : 1
